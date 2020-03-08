@@ -1,0 +1,20 @@
+.jumbotron{
+
+   
+    color: white;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+    height:100vh;
+    margin-bottom: -500px;
+    background-size: cover; 
+    padding: 5px;
+
+
+
+}
+
+body,html{
+    overflow:hidden
+  }
+
+  

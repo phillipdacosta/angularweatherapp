@@ -1,0 +1,36 @@
+
+
+    <div class="jumbotron" style = "padding: 0px" >
+
+        
+
+        <div *ngIf = "this.night_flag && this.desktop == false" class = "background" style = "background-image: url('assets/new_night.png');  background-size: cover;">
+
+              <app-weather-details></app-weather-details>
+         </div>
+
+         <div *ngIf = "this.evening_flag && this.desktop == false" class = "background" style = "background-image: url('assets/new_evening.png');  background-size: cover;">
+
+            <app-weather-details></app-weather-details>
+       </div>
+
+       <div *ngIf = "this.morning_flag && this.desktop == false" class = "background" style = "background-image: url('assets/new_early_morning.png');  background-size: cover; z-index: -1">
+
+        <app-weather-details></app-weather-details>
+   </div>
+
+   <div *ngIf = "this.dayTimeFlag && this.desktop == false" class = "background" style = "background-image: url('assets/test.png');  background-size: cover;">
+
+    <app-weather-details></app-weather-details>
+</div>
+
+<div *ngIf = "this.desktop == true" class = "background" style = "background: black">
+
+   <h1>This application was developed for mobile use only (for the time being).</h1>
+   <br>
+   <h1>To get the proper experience, please hit the same url on a mobile device!</h1>
+</div>
+
+</div>
+
+

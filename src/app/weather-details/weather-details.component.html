@@ -1,0 +1,160 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+<div class = "" *ngIf = "this.service.data_received == true">
+    
+    <div id="demo-2">
+        <input type="search" [(ngModel)]="city" placeholder="city" (keyup.enter)="makeApiCall(city)">
+    <!--    <button (click) = "makeApiCall(city)">Go</button>--> 
+
+
+ <!-- -->  
+    </div>
+
+
+    <div  class = "convertF" style = "position: absolute " >
+
+            <div class = "nearme" style = "position: absolute ">
+            <!--  -->      <button (click) = "getPosition()"> <i class="material-icons" style = "color: white">near_me</i> </button> 
+
+            </div>
+            <button (click) = "convertToFahrenheit(temperature, $event); "><span id = "converted"></span>&#176;C</button> | <button (click) = "convertToCelsius(temperature, $event); "><span></span>&#176;F</button>
+  
+        
+
+    </div>
+
+    <div>
+
+        <div class="condition">
+            {{this.service.current_location.current_observation.condition.text}}
+
+        </div>
+
+        <div class="low_high">
+
+                {{this.service.current_condition_high}}<span class="temperature"> </span>&#176;|
+                {{this.service.current_condition_low}}<span class="temperature"> </span>&#176; 
+
+        </div>
+
+        <div class="location">
+            
+        
+
+            {{this.service.current_location.location.city}},
+            {{this.service.current_location.location.region}}
+        </div>
+
+        <div class="condition_emoji">
+        <!--   <div class={{this.service.current_location.current_observation.condition.text}}></div>-->  
+       <!--      <div class = "{{service.current_location.forecasts[1].text}}"></div>-->  
+
+        </div>
+    </div>
+
+
+    <div class="temperature">
+
+        {{this.service.current_observation_temperature}}<span class="temperature"> </span>&#176;
+
+
+    </div>
+    <div class="forecast" style=" word-wrap: break-word; left: 17vw;">
+        <table cellspacing="0" cellpadding="0" style="width:70%; border-collapse:separate;border-spacing:0.5em; font-weight: 700">
+            
+            <tr width = "10%">
+                <td width = "10%">{{service.current_location.forecasts[1].day}}</td>
+                <div class = "day1"> 
+
+                        <td class = "{{service.current_location.forecasts[1].text}}"></td>
+
+                </div>
+                <td>
+                        {{service.day_two_high}}<span class="temperature"> </span>&#176;|
+
+                    {{service.day_two_low}} <span class="temperature"> </span>&#176;
+                
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>{{service.current_location.forecasts[2].day}}</td>
+                <div class = "day2"> 
+
+                        <p class = "{{service.current_location.forecasts[2].text}}"></p>
+
+                </div>
+                <td>
+                        {{service.day_three_high}}<span class="temperature"> </span>&#176;|
+
+                        {{service.day_three_low}} <span class="temperature"> </span>&#176;
+                
+                </td>
+            </tr>
+            <tr>
+                <td>{{service.current_location.forecasts[3].day}}</td>
+                <div class = "day3"> 
+
+                        <td class = "{{service.current_location.forecasts[3].text}}"></td>
+
+                </div>
+                <td>
+                        {{service.day_four_high}}<span class="temperature"> </span>&#176;|
+
+                        {{service.day_four_low}} <span class="temperature"> </span>&#176;
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{service.current_location.forecasts[4].day}}</td>
+                <div class = "day4"> 
+
+                        <td class = "{{service.current_location.forecasts[4].text}}"></td>
+
+                </div>
+                <td>
+                        {{service.day_five_high}}<span class="temperature"> </span>&#176;|
+
+                        {{service.day_five_low}} <span class="temperature"> </span>&#176;
+                
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{service.current_location.forecasts[5].day}}</td>
+                <div class = "day5"> 
+
+                        <td class = "{{service.current_location.forecasts[5].text}}"></td>
+
+                </div>
+                <td>
+                        {{service.day_six_high}}<span class="temperature"> </span>&#176;|
+                        {{service.day_six_low}} <span class="temperature"> </span>&#176;
+                    
+                
+                </td>
+            </tr>
+
+            <tr>
+                <td>{{service.current_location.forecasts[6].day}}</td>
+                <div class = "day6"> 
+
+                        <td class = "{{service.current_location.forecasts[2].text}}"></td>
+
+                </div>
+                <td>{{service.day_seven_high}}<span class="temperature"> </span>&#176;|
+                    {{service.day_seven_low}} <span class="temperature"> </span>&#176;
+                    
+                
+                </td>
+            </tr>
+
+
+
+        </table>
+    </div>
+
+</div>
